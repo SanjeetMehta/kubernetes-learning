@@ -1,0 +1,2 @@
+Get cluster info
+    kubectl cluster-info
