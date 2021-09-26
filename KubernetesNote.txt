@@ -1,0 +1,25 @@
+Kubernetes is managed using config files.
+
+Each config file is used to create Objects inside k8s cluster.
+    Types of Objects:
+        StatefulSet
+        ReplicaController
+        Pod
+        Service
+
+'Kind' keyword in config file defines the type of object we want to make using that config file.
+
+Some objects are used to run container, monitor a container, creating networks.
+
+Service object: helps us to setup networking inside our k8s cluster. 
+
+'apiVersion: v1': Limits types of object we want to create a config with given file.
+    This gives us access to the predefined set of objects like.
+        componentStatus, configMap, Endpoints, Event, Namespace, Pod
+
+'apiVersion: apps/v1': Limits types of object we want to create a config with given file.
+    This gives us access to the predefined set of objects like.
+       ControllerRevision, StatefulSet
+
+Pod: Its is a grouping of containers with a very common purpose. This is a smallest object which can be deployed in k8s.
+    Containers are always deployed inside a pod.
