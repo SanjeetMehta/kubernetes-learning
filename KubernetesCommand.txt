@@ -1,2 +1,12 @@
 Get cluster info
     kubectl cluster-info
+
+Feed config file to kubectl
+    kubectl apply -f <path_to_config_file> (deployment file goes to the k8s master)
+
+Get status of any k8s object
+    kubectl get <object_name> (object_name can be pods, services)
+
+Get objects running in all namespaces
+    kubectl get <object_name> --all-namespaces
+

@@ -23,3 +23,21 @@ Service object: helps us to setup networking inside our k8s cluster.
 
 Pod: Its is a grouping of containers with a very common purpose. This is a smallest object which can be deployed in k8s.
     Containers are always deployed inside a pod.
+
+Metadata section inside config: 
+    name: it is the name of the pod, this is helpful while getting details of a running pod using kubectl commands
+    labels:
+    
+kube-proxy: it is the one single window to the outside world. Any request which comes to a node goes through kube-proxy, this proxy inspects the requests and decides how to route it to
+    different services or pods created inside the node.
+
+Services:
+    Types:
+        ClusterIP
+        NodePort: exposes container to the outside world, i.e the user. Good only for development.
+        LoadBalancer
+        Ingress
+
+Two ways of deployment in Kubernetes:
+    Imperative deployments -> Do exactly these steps to arrive at this container setup
+    Declarative deployments -> Our container should look like this, make it happen
