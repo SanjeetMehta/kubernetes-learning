@@ -12,6 +12,7 @@ Each config file is used to create Objects inside k8s cluster.
 Some objects are used to run container, monitor a container, creating networks.
 
 Service object: helps us to setup networking inside our k8s cluster. 
+    It uses selector to connect with a pods and then serves it up to client over a static IP.
 
 'apiVersion: v1': Limits types of object we want to create a config with given file.
     This gives us access to the predefined set of objects like.
