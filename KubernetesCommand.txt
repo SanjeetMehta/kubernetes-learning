@@ -6,7 +6,15 @@ Feed config file to kubectl
 
 Get status of any k8s object
     kubectl get <object_name> (object_name can be pods, services)
-
+    kubectl get pods
+    kubectl get services
+    kubectl get deployments
+    
 Get objects running in all namespaces
     kubectl get <object_name> --all-namespaces
 
+Inspect a particular object
+    kubectl describe <object_type> <object_name>
+
+Delete the existing object
+    kubectl delete -f <path_to_config_file> (config file which was used to create this resource, this is an imperative update)

@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: client # Name can be used to do networking inside a pod.
-      image: stephengrider/multi-client
+      image: stephengrider/multi-worker
       ports:
         - containerPort: 3000 # Port which is exposed inside the docker image and needs to be made available to the outside k8s object.

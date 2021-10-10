@@ -41,3 +41,25 @@ Services:
 Two ways of deployment in Kubernetes:
     Imperative deployments -> Do exactly these steps to arrive at this container setup
     Declarative deployments -> Our container should look like this, make it happen
+
+Updating an object using updated config file.
+    Name, and kind of the object should always be unique.
+    Master uses the config to update the object which has same name and kind.
+
+Limitation in config updates for pod:
+    cannot update name, and ports.
+
+Deployment: Maintains a set of identical pods, ensuring that they have the correct config and the right number exists
+
+Pods vs Deployment
+    Pods:
+        Runs a single set of containers.
+        Good for one-off dev purposes.
+        Rarely used directly in production.
+        Configuration changes are limited
+    Deployment (Used for running pods:
+        Runs a set of identical pods(one or more)
+        Monitors the state of each pod, updating as necessary
+        Good for dev
+        Good for production
+        We can change any configuration.

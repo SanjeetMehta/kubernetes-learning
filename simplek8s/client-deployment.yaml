@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment # Creating an object of type deployment.
+metadata:
+  name: client-deployment # names used by kubectl for updating the config.
+spec:
+  replicas: 1 # Number of different pods this deployment is suppose to make.
+  selector: # Selector helps deployment to manage pods.
+    matchLabels: 
+      component: web # every pod in this config will have a lable of component called web.
+  template: # contains configuration that is going to be used for every single pod created by this deployment.
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: stephengrider/multi-client
+          ports:
+             - containerPort: 3000
