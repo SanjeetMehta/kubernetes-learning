@@ -32,11 +32,11 @@ Metadata section inside config:
 kube-proxy: it is the one single window to the outside world. Any request which comes to a node goes through kube-proxy, this proxy inspects the requests and decides how to route it to
     different services or pods created inside the node.
 
-Services:
+Services: (this is helpful in setting up networking in Kubernetes cluster. We only need service object if there is some traffic going into set of pods)
     Types:
-        ClusterIP
-        NodePort: exposes container to the outside world, i.e the user. Good only for development.
-        LoadBalancer
+        ClusterIP: Exposes a set of pods to other objects inside the cluster. It doesn't allow traffic from outside world.
+        NodePort: Exposes container to the outside world, i.e the user. Good only for development. Application is accessible via ip:port combination.
+        LoadBalancer: 
         Ingress
 
 Two ways of deployment in Kubernetes:

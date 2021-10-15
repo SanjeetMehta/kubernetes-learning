@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment # Deployment know what all pods to be managed based on the matchLabels and labels present in spec and template.
+metadata:
+  name: client-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      component: web
+  template:
+    metadata:
+      labels:
+        component: web
+    spec:
+      containers:
+        - name: client
+          image: stephengrider/multi-client
+          ports:
+            - containerPort: 3000 # port on which the application is running and is exposed

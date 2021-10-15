@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment # Deployment know what all pods to be managed based on the matchLabels and labels present in spec and template.
+metadata:
+  name: worker-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: worker
+  template:
+    metadata:
+      labels:
+        component: worker
+    spec:
+      containers:
+        - name: worker
+          image: stephengrider/multi-worker

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-cluster-ip-service
+spec:
+  type: ClusterIP # this cannot have nodePort property in ports section.
+  selector:
+    component: postgres
+  ports:
+    - port: 5432 # this port can be used by any other container/pod inside the application in order to access  multiclient pod.
+      targetPort: 5432 # this should be same as containerPort of the pod object.
