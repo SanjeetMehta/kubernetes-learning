@@ -28,3 +28,12 @@ Imperative command to update image
 
 Get logs from pods
     kubectl logs <pod_name>
+
+Get available storage classes:
+    kubectl get storageclass
+
+Get available persistent volumens:
+    kubectl get pv
+
+Get available persistent volumens claims:
+    kubectl get pvc

@@ -64,3 +64,19 @@ Pods vs Deployment
         Good for dev
         Good for production
         We can change any configuration.
+
+Kubernetes volume
+    "Volume" in generic container terminology: Some type of mechanism that allows a container ro access a filesystem outside itself.
+    "Volume" in Kubernetes: An object that allows a container to stores data at the pod level. If pod crashes this data is lost. We don't want to use this.
+
+Types of volumes
+    Volume: This resides inside the pod, if pod crashes this data is gone.
+    Persistent Volume: This resides outside of the pod, so, even if the pod crashes data is not lost.
+    Persistent Volumen Claim: 
+        It's an advertisiment of disk options which can be used inside the pod config. Once we mention the pvc in config file, kubernetes looks at statically provisioned pv. If requirement is
+            satisfied, kubernetes uses it, otherwise it creates a volume on the fly(Dynamically provisioned pv)
+        
+        Access Modes:
+            ReadWriteOnce: Can be used bya a single node only
+            ReadOnlyMany: Multiple nodes can read from this
+            ReadWriteMany: Can be read and written to by many pods
