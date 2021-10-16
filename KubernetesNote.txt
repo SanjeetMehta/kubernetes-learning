@@ -90,3 +90,9 @@ Secrets:
         tls: for https
     
     We can create secrets using literal or a file.
+
+Role based access control
+    User Accounts: Identifies a person administering our cluster
+    Service Accounts: Identifies a pod administering our cluster
+    ClusterRoleBinding: Authorizes an account to do a certain set of actions across the entire cluster
+    RoleBinding: Authorizes an account to do a certaing set of actions in a single namespace.

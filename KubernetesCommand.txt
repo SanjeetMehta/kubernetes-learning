@@ -43,3 +43,9 @@ Create secret
 
 Get secrets
     kubectl get secret
+
+Create service-account
+    kubectl create serviceacount --namespace <namespace> <serviceacount_name>
+
+Create ClusterRoleBinding
+    kubectl create clusterrolebinding <role_name> --clusterrole=cluster-admin --serviceacount=<namespace:serviceacount_name>
