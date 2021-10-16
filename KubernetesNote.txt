@@ -36,8 +36,8 @@ Services: (this is helpful in setting up networking in Kubernetes cluster. We on
     Types:
         ClusterIP: Exposes a set of pods to other objects inside the cluster. It doesn't allow traffic from outside world.
         NodePort: Exposes container to the outside world, i.e the user. Good only for development. Application is accessible via ip:port combination.
-        LoadBalancer: 
-        Ingress
+        LoadBalancer: Legacy way of getting network traffic into a cluster.
+        Ingress: Expose a set of services to the outside world.
 
 Two ways of deployment in Kubernetes:
     Imperative deployments -> Do exactly these steps to arrive at this container setup
@@ -80,3 +80,13 @@ Types of volumes
             ReadWriteOnce: Can be used bya a single node only
             ReadOnlyMany: Multiple nodes can read from this
             ReadWriteMany: Can be read and written to by many pods
+    
+Secrets: 
+    Securely stores a piece of information in the cluster, such as a database password
+
+    Types:
+        generic
+        docker-registry: for authenticaing with docker repository.
+        tls: for https
+    
+    We can create secrets using literal or a file.

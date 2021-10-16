@@ -29,11 +29,17 @@ Imperative command to update image
 Get logs from pods
     kubectl logs <pod_name>
 
-Get available storage classes:
+Get available storage classes
     kubectl get storageclass
 
-Get available persistent volumens:
+Get available persistent volumens
     kubectl get pv
 
-Get available persistent volumens claims:
+Get available persistent volumens claims
     kubectl get pvc
+
+Create secret
+    kubectl create secret generic <secret_name> --from-literal key=value
+
+Get secrets
+    kubectl get secret
